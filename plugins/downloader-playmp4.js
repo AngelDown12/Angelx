@@ -3,7 +3,7 @@ import fetch from 'node-fetch';
 let handler = async (m, { conn, usedPrefix, command, text }) => {
   if (!text) {
     await m.react('📀');
-    return m.reply(`╭─⬣「 Barboza 」⬣
+    return m.reply(`╭─⬣「 𝐀𝐧𝐠𝐞𝐥 」⬣
 │  ❗ *Uso Incorrecto*
 │  ➤ Ingresa un texto para buscar en YouTube.
 │  ➤ *Ejemplo:* ${usedPrefix + command} Shakira
@@ -19,7 +19,7 @@ let handler = async (m, { conn, usedPrefix, command, text }) => {
 
     if (!searchData?.data || searchData.data.length === 0) {
       await m.react('🔴');
-      return m.reply(`╭─⬣「 *Barboza* 」⬣
+      return m.reply(`╭─⬣「 *𝐀𝐧𝐠𝐞𝐥* 」⬣
 │  ⚠️ *Sin Resultados*
 │  ➤ No se encontraron resultados para:
 │  ➤ *"${text}"*
@@ -28,7 +28,7 @@ let handler = async (m, { conn, usedPrefix, command, text }) => {
 
     const video = searchData.data[0];
 
-    let info = `╭─⬣「 *Barboza* 」⬣
+    let info = `╭─⬣「 *𝐀𝐧𝐠𝐞𝐥* 」⬣
 │  ≡◦🎵 *Título:* ${video.title}
 │  ≡◦📺 *Canal:* ${video.author.name}
 │  ≡◦⏱️ *Duración:* ${video.duration}
@@ -48,7 +48,7 @@ let handler = async (m, { conn, usedPrefix, command, text }) => {
 
     if (!downloadData?.result?.download?.url) {
       await m.react('🔴');
-      return m.reply(`╭─⬣「 *Barboza* 」⬣
+      return m.reply(`╭─⬣「 *𝐀𝐧𝐠𝐞𝐥* 」⬣
 │  ❌ *Error al descargar*
 │  ➤ No se pudo obtener el audio del video.
 ╰`);
@@ -64,7 +64,7 @@ let handler = async (m, { conn, usedPrefix, command, text }) => {
   } catch (error) {
     console.error(error);
     await m.react('🔴');
-    m.reply(`╭─⬣「 *Barboza * 」⬣
+    m.reply(`╭─⬣「 *𝐀𝐧𝐠𝐞𝐥 * 」⬣
 │  ❌ *Error Interno*
 │  ➤ ${error.message}
 ╰`);

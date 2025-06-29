@@ -3,8 +3,8 @@ async function handler(m, { conn }) {
     let ownerJid = numcreador + '@s.whatsapp.net';
 
     let name = await conn.getName(ownerJid) || 'Owner';
-    let about = (await conn.fetchStatus(ownerJid).catch(() => {}))?.status || 'Creador de bots de WhatsApp y del Bot Barboza Ai';
-    let empresa = 'Barboza- Servicios Tecnológicos';
+    let about = (await conn.fetchStatus(ownerJid).catch(() => {}))?.status || 'Creador de bots de WhatsApp y del Bot 𝐀𝐧𝐠𝐞𝐥 Ai';
+    let empresa = '𝐀𝐧𝐠𝐞𝐥- Servicios Tecnológicos';
 
     let caption = `
 ✨ *Información del Dueño:* ✨

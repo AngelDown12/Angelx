@@ -1,4 +1,4 @@
-// ©Créditos A Barboza
+// ©Créditos A 𝐀𝐧𝐠𝐞𝐥
 let handler = async (m, { conn, text }) => {
   // No Quites Los Créditos🚀
   m.react('⚙️');

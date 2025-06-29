@@ -2,7 +2,7 @@ let handler = async (m, { isPrems, conn }) => {
 let time = global.db.data.users[m.sender].lastcofre + 0 
 if (new Date - global.db.data.users[m.sender].lastcofre < 0) throw `⏳ Ya reclamaste tu cofre. Vuelve en *${msToTime(time - new Date())}* para reclamar de nuevo.`
 
-let img = 'https://files.catbox.moe/ltq7ph.jpg'
+let img = 'https://files.catbox.moe/103kf9.jpg'
 
 let texto = `
 ✨🎨 *𝕄𝔼ℕ𝕌́ ℂℝ𝔼𝔸ℂ𝕀𝕆́ℕ 𝔻𝔼 𝕃𝕆𝔾𝕆𝕊* 🎨✨

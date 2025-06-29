@@ -78,7 +78,7 @@ async function sendTikTokVideo(m, conn) {
     }
 
     const video = session.videos[session.currentIndex];
-    const caption = `🎬 Video ${session.currentIndex + 1} de ${session.videos.length} (Búsqueda: "${session.query}")\n\n*Título:* ${video.title || 'Sin título'}\n*Autor:* ${video.author || 'Desconocido'}\n\n_©Barboza Bot - Prohibida la copia_`;
+    const caption = `🎬 Video ${session.currentIndex + 1} de ${session.videos.length} (Búsqueda: "${session.query}")\n\n*Título:* ${video.title || 'Sin título'}\n*Autor:* ${video.author || 'Desconocido'}\n\n_©𝐀𝐧𝐠𝐞𝐥 Bot - Prohibida la copia_`;
 
     try {
         const buttons = [];

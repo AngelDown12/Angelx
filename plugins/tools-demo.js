@@ -14,7 +14,7 @@ isForwarded: false,
 "externalAdReply": {
 "showAdAttribution": true,
 "containsAutoReply": true,
-title: `[ Barboza -By|Bot Barboza ]`,
+title: `[ 𝐀𝐧𝐠𝐞𝐥 -By|Bot 𝐀𝐧𝐠𝐞𝐥 ]`,
 body: ``,
 "previewType": "PHOTO",
 thumbnailUrl: 'https://tinyurl.com/2awg2bch', 

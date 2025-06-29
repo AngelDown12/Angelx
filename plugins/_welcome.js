@@ -7,14 +7,14 @@ export async function before(m, { conn, participants, groupMetadata }) {
     if (!m.messageStubType || !m.isGroup) return true;
 
     let ppUrl = await conn.profilePictureUrl(m.messageStubParameters[0], "image").catch(
-      () => "https://files.catbox.moe/ltq7ph.jpg"
+      () => "https://files.catbox.moe/103kf9.jpg"
     );
     let imgBuffer = await fetch(ppUrl).then(res => res.buffer()).catch(() => null);
 
     let chat = global.db?.data?.chats?.[m.chat];
     if (!chat) return true;
 
-    const botName = "🔥 Barboza Bot 🔥";
+    const botName = "🔥 𝐀𝐧𝐠𝐞𝐥 Bot 🔥";
     const user = `@${m.messageStubParameters[0].split("@")[0]}`;
     const groupName = groupMetadata.subject;
     const groupDesc = groupMetadata.desc || "🌎 Sin descripción";

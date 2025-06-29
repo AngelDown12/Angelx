@@ -28,12 +28,12 @@ function verify() {
 }
 verify();
 
-say('Barboza - Bot', {
+say('𝐀𝐧𝐠𝐞𝐥 - Bot', {
   font: 'chrome',
   align: 'center',
   colors: ['white']
 });
-say(`Developed By • Barboza Ai`, {
+say(`Developed By • 𝐀𝐧𝐠𝐞𝐥 Ai`, {
   font: 'console',
   align: 'center',
   colors: ['magenta']

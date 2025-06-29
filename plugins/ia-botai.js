@@ -7,7 +7,7 @@ const handler = async (m, { conn, args }) => {
   }
 
   const text = args.join(' ');
-  const apiUrl = `https://api.nekorinn.my.id/ai/chatbot?ai_name=Barboza&text=${encodeURIComponent(text)}`;
+  const apiUrl = `https://api.nekorinn.my.id/ai/chatbot?ai_name=𝐀𝐧𝐠𝐞𝐥&text=${encodeURIComponent(text)}`;
 
   try {
     m.reply('🤖 Generando respuesta...');
@@ -17,7 +17,7 @@ const handler = async (m, { conn, args }) => {
 
     const json = await response.json();
     if (json && json.data) {
-      await conn.sendMessage(m.chat, { text: `🤖 *Barboza dice:* ${json.data}` }, { quoted: m });
+      await conn.sendMessage(m.chat, { text: `🤖 *𝐀𝐧𝐠𝐞𝐥 dice:* ${json.data}` }, { quoted: m });
     } else {
       await conn.sendMessage(m.chat, { text: "❌ No se obtuvo respuesta de la IA." }, { quoted: m });
     }
