@@ -33,7 +33,17 @@ var handler = async (m, { usedPrefix, command }) => {
     } catch (err) {
         await m.react('✖️'); 
         console.error(err);
-        conn.reply(m.chat, '🚩 *Ocurrió un fallo al verificar los plugins.*', m,rcanal);
+        conn.reply(m.chat, '🚩 *Ocurrió un fallo al verificar los plugins.*', m,contextInfo: {
+        externalAdReply: {
+          title: '𝐀𝐧𝐠𝐞𝐥 𝐁𝐨𝐭 𝐃𝐞𝐥𝐚𝐲 ',
+          body: '𝐀𝐧𝐠𝐞𝐥 𝐁𝐨𝐭 𝐃𝐞𝐥𝐚𝐲 ',
+          mediaType: 1,
+          thumbnailUrl: 'https://qu.ax/JRCMQ.jpg',
+          renderLargerThumbnail: false,
+          sourceUrl: ''
+        }
+      }
+    }, { quoted: m }););
     }
 };
 

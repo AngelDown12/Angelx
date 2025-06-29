@@ -7,7 +7,17 @@ let txt = `ᰔᩚ mᥲᥒᥙᥲᥣ ⍴ᥲrᥲ ᥱძі𝗍ᥲr 𝗍ᥙ ⍴ᥱr�
     txt += `❀ *${usedPrefix}marry* <cásate con una persona>\n\n`
     txt += `┅┅┅┅┅┅┅༻❁༺┅┅┅┅┅┅┅`;
 
-conn.reply(m.chat, txt, m, rcanal);
+conn.reply(m.chat, txt, m, contextInfo: {
+        externalAdReply: {
+          title: '𝐀𝐧𝐠𝐞𝐥 𝐁𝐨𝐭 𝐃𝐞𝐥𝐚𝐲 ',
+          body: '𝐀𝐧𝐠𝐞𝐥 𝐁𝐨𝐭 𝐃𝐞𝐥𝐚𝐲 ',
+          mediaType: 1,
+          thumbnailUrl: 'https://qu.ax/JRCMQ.jpg',
+          renderLargerThumbnail: false,
+          sourceUrl: ''
+        }
+      }
+    }, { quoted: m }););
 m.react('🍫');
 }
 

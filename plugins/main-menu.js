@@ -7,7 +7,7 @@ const clockString = ms => {
   return [h, m, s].map(v => v.toString().padStart(2, '0')).join(':');
 };
 
-const imagen = "https://files.catbox.moe/103kf9.jpg";
+const imagen = "https://qu.ax/JRCMQ.jpg";
 
 const menuHeader = `
 ╭─❒ 「 *📍 BARBOZA MD* 」
@@ -110,7 +110,17 @@ let handler = async (m, { conn, usedPrefix: _p }) => { // Corrected parameter he
 
   } catch (e) {
     console.error(e);
-    conn.reply(m.chat, '⚠️ Ocurrió un error al generar el menú. Por favor, inténtalo de nuevo más tarde o contacta al soporte.', m); // Removed rcanal here
+    conn.reply(m.chat, '⚠️ Ocurrió un error al generar el menú. Por favor, inténtalo de nuevo más tarde o contacta al soporte.', m); // Removed contextInfo: {
+        externalAdReply: {
+          title: '𝐀𝐧𝐠𝐞𝐥 𝐁𝐨𝐭 𝐃𝐞𝐥𝐚𝐲 ',
+          body: '𝐀𝐧𝐠𝐞𝐥 𝐁𝐨𝐭 𝐃𝐞𝐥𝐚𝐲 ',
+          mediaType: 1,
+          thumbnailUrl: 'https://qu.ax/JRCMQ.jpg',
+          renderLargerThumbnail: false,
+          sourceUrl: ''
+        }
+      }
+    }, { quoted: m }); here
   }
 };
 handler.command = ['menu', 'help', 'menú'];

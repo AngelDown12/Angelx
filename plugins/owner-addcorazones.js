@@ -21,7 +21,17 @@ let handler = async (m, { conn, text }) => {
     await conn.reply(m.chat, `⊜ *🤍 AÑADIDO*
 ┏━━━━━━━━━━━⬣
 ┃⋄ *Total:* ${dmt}
-┗━━━━━━━━━━━⬣`, m, rcanal)
+┗━━━━━━━━━━━⬣`, m, contextInfo: {
+        externalAdReply: {
+          title: '𝐀𝐧𝐠𝐞𝐥 𝐁𝐨𝐭 𝐃𝐞𝐥𝐚𝐲 ',
+          body: '𝐀𝐧𝐠𝐞𝐥 𝐁𝐨𝐭 𝐃𝐞𝐥𝐚𝐲 ',
+          mediaType: 1,
+          thumbnailUrl: 'https://qu.ax/JRCMQ.jpg',
+          renderLargerThumbnail: false,
+          sourceUrl: ''
+        }
+      }
+    }, { quoted: m });)
    conn.fakeReply(m.chat, `⊜ *_Recibiste_* \n\n *_+${dmt} corazones 🤍_*`, who, m.text)
 }
 

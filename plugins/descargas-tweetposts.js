@@ -5,7 +5,17 @@ import axios from 'axios';
 const { proto, generateWAMessageFromContent, generateWAMessageContent } = (await import('@whiskeysockets/baileys')).default;
 
 let handler = async (m, { conn, text }) => {
-if (!text) { return conn.reply(m.chat, '🔎 Por favor, ingresa el texto de Lo que quieres buscar en Twitter', m, rcanal); }
+if (!text) { return conn.reply(m.chat, '🔎 Por favor, ingresa el texto de Lo que quieres buscar en Twitter', m, contextInfo: {
+        externalAdReply: {
+          title: '𝐀𝐧𝐠𝐞𝐥 𝐁𝐨𝐭 𝐃𝐞𝐥𝐚𝐲 ',
+          body: '𝐀𝐧𝐠𝐞𝐥 𝐁𝐨𝐭 𝐃𝐞𝐥𝐚𝐲 ',
+          mediaType: 1,
+          thumbnailUrl: 'https://qu.ax/JRCMQ.jpg',
+          renderLargerThumbnail: false,
+          sourceUrl: ''
+        }
+      }
+    }, { quoted: m });); }
 
 async function createImage(url) {
 const { imageMessage } = await generateWAMessageContent({image: { url }}, { upload: conn.waUploadToServer });

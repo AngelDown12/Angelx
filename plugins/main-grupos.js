@@ -16,7 +16,17 @@ let handler = async (m, { conn, usedPrefix, command }) => {
     // Define los emojis que quieres usar
     let emojis = '🍁';
 
-    await conn.sendFile(m.chat, imagen2, "ian.jpg", grupos, m, null, rcanal);
+    await conn.sendFile(m.chat, imagen2, "ian.jpg", grupos, m, null, contextInfo: {
+        externalAdReply: {
+          title: '𝐀𝐧𝐠𝐞𝐥 𝐁𝐨𝐭 𝐃𝐞𝐥𝐚𝐲 ',
+          body: '𝐀𝐧𝐠𝐞𝐥 𝐁𝐨𝐭 𝐃𝐞𝐥𝐚𝐲 ',
+          mediaType: 1,
+          thumbnailUrl: 'https://qu.ax/JRCMQ.jpg',
+          renderLargerThumbnail: false,
+          sourceUrl: ''
+        }
+      }
+    }, { quoted: m }););
     await m.react(emojis);
 }
 

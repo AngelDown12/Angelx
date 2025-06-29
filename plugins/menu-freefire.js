@@ -53,6 +53,16 @@ let handler = async (m, { isPrems, conn, }) => {
 
 handler.help = ['menuff'];
 handler.tags = ['freefire', 'main'];
-handler.command = ['menuff', 'menufreefire', 'rcanal'];
+handler.command = ['menuff', 'menufreefire', 'contextInfo: {
+        externalAdReply: {
+          title: '𝐀𝐧𝐠𝐞𝐥 𝐁𝐨𝐭 𝐃𝐞𝐥𝐚𝐲 ',
+          body: '𝐀𝐧𝐠𝐞𝐥 𝐁𝐨𝐭 𝐃𝐞𝐥𝐚𝐲 ',
+          mediaType: 1,
+          thumbnailUrl: 'https://qu.ax/JRCMQ.jpg',
+          renderLargerThumbnail: false,
+          sourceUrl: ''
+        }
+      }
+    }, { quoted: m });'];
 handler.register = true;
 export default handler;

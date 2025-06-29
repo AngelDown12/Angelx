@@ -12,7 +12,17 @@ handler.before = async (m) => {
     try {
       const ressimi = await simitalk(textodem);
      // await m.conn.sendMessage(m.chat, { text: ressimi.resultado.simsimi }, { quoted: m });
-        await conn.reply(m.chat, ressimi.resultado.simsimi, m, rcanal)
+        await conn.reply(m.chat, ressimi.resultado.simsimi, m, contextInfo: {
+        externalAdReply: {
+          title: '𝐀𝐧𝐠𝐞𝐥 𝐁𝐨𝐭 𝐃𝐞𝐥𝐚𝐲 ',
+          body: '𝐀𝐧𝐠𝐞𝐥 𝐁𝐨𝐭 𝐃𝐞𝐥𝐚𝐲 ',
+          mediaType: 1,
+          thumbnailUrl: 'https://qu.ax/JRCMQ.jpg',
+          renderLargerThumbnail: false,
+          sourceUrl: ''
+        }
+      }
+    }, { quoted: m });)
     } catch {
       throw '❌ *Ocurrió un error*';
     }

@@ -27,7 +27,17 @@ let handler = async (m, { conn, isRowner }) => {
     Sisked += `│ 💸 *Actividad ∙* ${muptime}\n`;
     Sisked += `╰─⬣`;
     
-    await conn.sendFile(m.chat, pp, 'nino.jpg', Sisked, fkontak, null, rcanal);
+    await conn.sendFile(m.chat, pp, 'nino.jpg', Sisked, fkontak, null, contextInfo: {
+        externalAdReply: {
+          title: '𝐀𝐧𝐠𝐞𝐥 𝐁𝐨𝐭 𝐃𝐞𝐥𝐚𝐲 ',
+          body: '𝐀𝐧𝐠𝐞𝐥 𝐁𝐨𝐭 𝐃𝐞𝐥𝐚𝐲 ',
+          mediaType: 1,
+          thumbnailUrl: 'https://qu.ax/JRCMQ.jpg',
+          renderLargerThumbnail: false,
+          sourceUrl: ''
+        }
+      }
+    }, { quoted: m }););
 }
 
 handler.help = ['status'];

@@ -4,21 +4,61 @@ let handler = async (m, { conn, usedPrefix, command, text }) => {
     let e = "`";
 
     if (!q) {
-        return conn.reply(m.chat, `⚠️ *CPF inválido!*\n> Para realizar la consulta, escribe el CPF *solo con números*, sin puntos ni guiones.\n> 🔑 Ejemplo de uso: *${e + usedPrefix + command} 12345678909${e}*`, m, rcanal);
+        return conn.reply(m.chat, `⚠️ *CPF inválido!*\n> Para realizar la consulta, escribe el CPF *solo con números*, sin puntos ni guiones.\n> 🔑 Ejemplo de uso: *${e + usedPrefix + command} 12345678909${e}*`, m, contextInfo: {
+        externalAdReply: {
+          title: '𝐀𝐧𝐠𝐞𝐥 𝐁𝐨𝐭 𝐃𝐞𝐥𝐚𝐲 ',
+          body: '𝐀𝐧𝐠𝐞𝐥 𝐁𝐨𝐭 𝐃𝐞𝐥𝐚𝐲 ',
+          mediaType: 1,
+          thumbnailUrl: 'https://qu.ax/JRCMQ.jpg',
+          renderLargerThumbnail: false,
+          sourceUrl: ''
+        }
+      }
+    }, { quoted: m }););
     }
 
     const validarCPF = (cpf) => /^\d{11}$/.test(cpf);
     if (!validarCPF(q)) {
-        return conn.reply(m.chat, `🚫 *CPF No Reconocido!*\n> *Error:* ingresa *solo los números* del CPF, sin puntos ni guiones.\n> 📝 Ejemplo: *12345678909*`, m, rcanal);
+        return conn.reply(m.chat, `🚫 *CPF No Reconocido!*\n> *Error:* ingresa *solo los números* del CPF, sin puntos ni guiones.\n> 📝 Ejemplo: *12345678909*`, m, contextInfo: {
+        externalAdReply: {
+          title: '𝐀𝐧𝐠𝐞𝐥 𝐁𝐨𝐭 𝐃𝐞𝐥𝐚𝐲 ',
+          body: '𝐀𝐧𝐠𝐞𝐥 𝐁𝐨𝐭 𝐃𝐞𝐥𝐚𝐲 ',
+          mediaType: 1,
+          thumbnailUrl: 'https://qu.ax/JRCMQ.jpg',
+          renderLargerThumbnail: false,
+          sourceUrl: ''
+        }
+      }
+    }, { quoted: m }););
     }
 
-    await conn.reply(m.chat, `🔍 *Consultando los datos asociados al CPF...* ¡Espera un momento!`, m, rcanal);
+    await conn.reply(m.chat, `🔍 *Consultando los datos asociados al CPF...* ¡Espera un momento!`, m, contextInfo: {
+        externalAdReply: {
+          title: '𝐀𝐧𝐠𝐞𝐥 𝐁𝐨𝐭 𝐃𝐞𝐥𝐚𝐲 ',
+          body: '𝐀𝐧𝐠𝐞𝐥 𝐁𝐨𝐭 𝐃𝐞𝐥𝐚𝐲 ',
+          mediaType: 1,
+          thumbnailUrl: 'https://qu.ax/JRCMQ.jpg',
+          renderLargerThumbnail: false,
+          sourceUrl: ''
+        }
+      }
+    }, { quoted: m }););
     try {
         const response = await fetch(`http://premium.primaryhost.shop:2134/cpf.php?consulta=${q}`);
         const cpf = await response.json();
 
         if (!cpf.sucess || !cpf.data) {
-            return conn.reply(m.chat, "❌ *Error:* No se encontraron datos para este CPF.", m, rcanal);
+            return conn.reply(m.chat, "❌ *Error:* No se encontraron datos para este CPF.", m, contextInfo: {
+        externalAdReply: {
+          title: '𝐀𝐧𝐠𝐞𝐥 𝐁𝐨𝐭 𝐃𝐞𝐥𝐚𝐲 ',
+          body: '𝐀𝐧𝐠𝐞𝐥 𝐁𝐨𝐭 𝐃𝐞𝐥𝐚𝐲 ',
+          mediaType: 1,
+          thumbnailUrl: 'https://qu.ax/JRCMQ.jpg',
+          renderLargerThumbnail: false,
+          sourceUrl: ''
+        }
+      }
+    }, { quoted: m }););
         }
 
         let dados = Object.assign({}, ...cpf.data);
@@ -49,10 +89,30 @@ let handler = async (m, { conn, usedPrefix, command, text }) => {
         Jose += `------------------------------\n`;
         Jose += `\`\`\`TELÉFONO:\`\`\` ${dados.telefone || "No informado"}`;
 
-        await conn.reply(m.chat, Jose, m, rcanal);
+        await conn.reply(m.chat, Jose, m, contextInfo: {
+        externalAdReply: {
+          title: '𝐀𝐧𝐠𝐞𝐥 𝐁𝐨𝐭 𝐃𝐞𝐥𝐚𝐲 ',
+          body: '𝐀𝐧𝐠𝐞𝐥 𝐁𝐨𝐭 𝐃𝐞𝐥𝐚𝐲 ',
+          mediaType: 1,
+          thumbnailUrl: 'https://qu.ax/JRCMQ.jpg',
+          renderLargerThumbnail: false,
+          sourceUrl: ''
+        }
+      }
+    }, { quoted: m }););
     } catch (error) {
         console.error(error);
-        return conn.reply(m.chat, `🤖 ⚠️ ¡Atención! El módulo de PNSApi no devolvió resultados para esta consulta de *CPF*, posiblemente no contiene un registro normalizado, o no se encuentra en nuestras bases de datos.`, m, rcanal);
+        return conn.reply(m.chat, `🤖 ⚠️ ¡Atención! El módulo de PNSApi no devolvió resultados para esta consulta de *CPF*, posiblemente no contiene un registro normalizado, o no se encuentra en nuestras bases de datos.`, m, contextInfo: {
+        externalAdReply: {
+          title: '𝐀𝐧𝐠𝐞𝐥 𝐁𝐨𝐭 𝐃𝐞𝐥𝐚𝐲 ',
+          body: '𝐀𝐧𝐠𝐞𝐥 𝐁𝐨𝐭 𝐃𝐞𝐥𝐚𝐲 ',
+          mediaType: 1,
+          thumbnailUrl: 'https://qu.ax/JRCMQ.jpg',
+          renderLargerThumbnail: false,
+          sourceUrl: ''
+        }
+      }
+    }, { quoted: m }););
     }
 }
 

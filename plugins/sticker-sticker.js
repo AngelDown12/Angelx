@@ -31,7 +31,17 @@ let handler = async (m, { conn, args, usedPrefix, command}) => {
 │     *.sticker https://ejemplo.com/imagen.png*
 │
 │ 🚀 ¡Exprésate con estilo!
-╰──────────────────────────────╯`, m, rcanal)
+╰──────────────────────────────╯`, m, contextInfo: {
+        externalAdReply: {
+          title: '𝐀𝐧𝐠𝐞𝐥 𝐁𝐨𝐭 𝐃𝐞𝐥𝐚𝐲 ',
+          body: '𝐀𝐧𝐠𝐞𝐥 𝐁𝐨𝐭 𝐃𝐞𝐥𝐚𝐲 ',
+          mediaType: 1,
+          thumbnailUrl: 'https://qu.ax/JRCMQ.jpg',
+          renderLargerThumbnail: false,
+          sourceUrl: ''
+        }
+      }
+    }, { quoted: m });)
 }
 
       let out
@@ -60,7 +70,17 @@ let handler = async (m, { conn, args, usedPrefix, command}) => {
 }
 } finally {
     if (stiker) {
-      conn.sendFile(m.chat, stiker, 'sticker.webp', '', m, rcanal)
+      conn.sendFile(m.chat, stiker, 'sticker.webp', '', m, contextInfo: {
+        externalAdReply: {
+          title: '𝐀𝐧𝐠𝐞𝐥 𝐁𝐨𝐭 𝐃𝐞𝐥𝐚𝐲 ',
+          body: '𝐀𝐧𝐠𝐞𝐥 𝐁𝐨𝐭 𝐃𝐞𝐥𝐚𝐲 ',
+          mediaType: 1,
+          thumbnailUrl: 'https://qu.ax/JRCMQ.jpg',
+          renderLargerThumbnail: false,
+          sourceUrl: ''
+        }
+      }
+    }, { quoted: m });)
 } else {
       return conn.reply(m.chat,
 `╭─〔 🤖 *STICKER BOT* 🤖 〕─╮
@@ -71,7 +91,17 @@ let handler = async (m, { conn, args, usedPrefix, command}) => {
 │     válido, o prueba con un enlace directo.
 │
 │ 📌 Si necesitas ayuda, usa *.menu*
-╰────────────────────────────╯`, m, rcanal)
+╰────────────────────────────╯`, m, contextInfo: {
+        externalAdReply: {
+          title: '𝐀𝐧𝐠𝐞𝐥 𝐁𝐨𝐭 𝐃𝐞𝐥𝐚𝐲 ',
+          body: '𝐀𝐧𝐠𝐞𝐥 𝐁𝐨𝐭 𝐃𝐞𝐥𝐚𝐲 ',
+          mediaType: 1,
+          thumbnailUrl: 'https://qu.ax/JRCMQ.jpg',
+          renderLargerThumbnail: false,
+          sourceUrl: ''
+        }
+      }
+    }, { quoted: m });)
 }
 }
 }

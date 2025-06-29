@@ -81,7 +81,17 @@ let handler = async (m, { conn, usedPrefix }) => {
   await conn.sendMessage(
     m.chat,
     { text, buttons, viewOnce: true },
-    { quoted: m,rcanal }
+    { quoted: m,contextInfo: {
+        externalAdReply: {
+          title: '𝐀𝐧𝐠𝐞𝐥 𝐁𝐨𝐭 𝐃𝐞𝐥𝐚𝐲 ',
+          body: '𝐀𝐧𝐠𝐞𝐥 𝐁𝐨𝐭 𝐃𝐞𝐥𝐚𝐲 ',
+          mediaType: 1,
+          thumbnailUrl: 'https://qu.ax/JRCMQ.jpg',
+          renderLargerThumbnail: false,
+          sourceUrl: ''
+        }
+      }
+    }, { quoted: m }); }
   );
 };
 
@@ -102,7 +112,17 @@ handler.before = async (m, { conn, usedPrefix }) => {
     return await conn.sendMessage(
       m.chat,
       { text, buttons, viewOnce: true },
-      { quoted: m,rcanal}
+      { quoted: m,contextInfo: {
+        externalAdReply: {
+          title: '𝐀𝐧𝐠𝐞𝐥 𝐁𝐨𝐭 𝐃𝐞𝐥𝐚𝐲 ',
+          body: '𝐀𝐧𝐠𝐞𝐥 𝐁𝐨𝐭 𝐃𝐞𝐥𝐚𝐲 ',
+          mediaType: 1,
+          thumbnailUrl: 'https://qu.ax/JRCMQ.jpg',
+          renderLargerThumbnail: false,
+          sourceUrl: ''
+        }
+      }
+    }, { quoted: m });}
     );
   } else {
     juego.intentos--;
@@ -125,7 +145,17 @@ handler.before = async (m, { conn, usedPrefix }) => {
       return await conn.sendMessage(
         m.chat,
         { text: `❌ Incorrecto. Te quedan ${juego.intentos} corazón(es) ❤️` },
-        { quoted: m,rcanal}
+        { quoted: m,contextInfo: {
+        externalAdReply: {
+          title: '𝐀𝐧𝐠𝐞𝐥 𝐁𝐨𝐭 𝐃𝐞𝐥𝐚𝐲 ',
+          body: '𝐀𝐧𝐠𝐞𝐥 𝐁𝐨𝐭 𝐃𝐞𝐥𝐚𝐲 ',
+          mediaType: 1,
+          thumbnailUrl: 'https://qu.ax/JRCMQ.jpg',
+          renderLargerThumbnail: false,
+          sourceUrl: ''
+        }
+      }
+    }, { quoted: m });}
       );
     }
   }

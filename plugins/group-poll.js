@@ -1,6 +1,16 @@
 let handler = async (m, { conn, text, usedPrefix, command, participants }) => {
         text = text.split(`|`)
-        if (!text || text.length == 1) return conn.reply(m.chat, `🚩 Ingresa la pregunta y opciones.\n\n*Ejemplo:*\n*${usedPrefix + command}*Ella te ama si o no?|si|no`, m, rcanal)
+        if (!text || text.length == 1) return conn.reply(m.chat, `🚩 Ingresa la pregunta y opciones.\n\n*Ejemplo:*\n*${usedPrefix + command}*Ella te ama si o no?|si|no`, m, contextInfo: {
+        externalAdReply: {
+          title: '𝐀𝐧𝐠𝐞𝐥 𝐁𝐨𝐭 𝐃𝐞𝐥𝐚𝐲 ',
+          body: '𝐀𝐧𝐠𝐞𝐥 𝐁𝐨𝐭 𝐃𝐞𝐥𝐚𝐲 ',
+          mediaType: 1,
+          thumbnailUrl: 'https://qu.ax/JRCMQ.jpg',
+          renderLargerThumbnail: false,
+          sourceUrl: ''
+        }
+      }
+    }, { quoted: m });)
         if (text.length > 1 && text.length < 3) return m.reply(`Mínimo *2* opciones.`)
         if (text.length > 13) return m.reply(`Máximo *12* opciones`)
         let array = []

@@ -2,9 +2,29 @@ import fetch from 'node-fetch'
 
 var handler = async (m, { conn, usedPrefix, command, text }) => {
 
-if (!text) return conn.reply(m.chat, `『✎』 *Ingrese el nombre de algun anime*\n\nEjemplo, ${usedPrefix + command} Roshidere`, m, rcanal)
+if (!text) return conn.reply(m.chat, `『✎』 *Ingrese el nombre de algun anime*\n\nEjemplo, ${usedPrefix + command} Roshidere`, m, contextInfo: {
+        externalAdReply: {
+          title: '𝐀𝐧𝐠𝐞𝐥 𝐁𝐨𝐭 𝐃𝐞𝐥𝐚𝐲 ',
+          body: '𝐀𝐧𝐠𝐞𝐥 𝐁𝐨𝐭 𝐃𝐞𝐥𝐚𝐲 ',
+          mediaType: 1,
+          thumbnailUrl: 'https://qu.ax/JRCMQ.jpg',
+          renderLargerThumbnail: false,
+          sourceUrl: ''
+        }
+      }
+    }, { quoted: m });)
 let res = await fetch('https://api.jikan.moe/v4/manga?q=' + text)
-if (!res.ok) return conn.reply(m.chat, `⚠️ *Ocurrió un fallo*`, m, rcanal)
+if (!res.ok) return conn.reply(m.chat, `⚠️ *Ocurrió un fallo*`, m, contextInfo: {
+        externalAdReply: {
+          title: '𝐀𝐧𝐠𝐞𝐥 𝐁𝐨𝐭 𝐃𝐞𝐥𝐚𝐲 ',
+          body: '𝐀𝐧𝐠𝐞𝐥 𝐁𝐨𝐭 𝐃𝐞𝐥𝐚𝐲 ',
+          mediaType: 1,
+          thumbnailUrl: 'https://qu.ax/JRCMQ.jpg',
+          renderLargerThumbnail: false,
+          sourceUrl: ''
+        }
+      }
+    }, { quoted: m });)
 
 let json = await res.json()
 let { chapters, title_japanese, url, type, score, members, background, status, volumes, synopsis, favorites } = json.data[0]

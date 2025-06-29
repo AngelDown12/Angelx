@@ -2,14 +2,24 @@ import fetch from 'node-fetch'
 
 export async function before(m, { conn }) {
 let name = `🎖️ ᥒᥙᥱ᥎᥆ ᥴᥲᥒᥲᥣ | ᥴ᥆mᥙᥒі𝗍ᥡ sіgᥙᥱ ᥴᥲᥒᥲᥣ ⭐`
-let imagenes = ["https://files.catbox.moe/103kf9.jpg",
-"https://files.catbox.moe/103kf9.jpg",
-"https://files.catbox.moe/103kf9.jpg",
-"https://files.catbox.moe/103kf9.jpg",]
+let imagenes = ["https://qu.ax/JRCMQ.jpg",
+"https://qu.ax/JRCMQ.jpg",
+"https://qu.ax/JRCMQ.jpg",
+"https://qu.ax/JRCMQ.jpg",]
 
 let icono = imagenes[Math.floor(Math.random() * imagenes.length)]
 
-global.rcanal = {
+global.contextInfo: {
+        externalAdReply: {
+          title: '𝐀𝐧𝐠𝐞𝐥 𝐁𝐨𝐭 𝐃𝐞𝐥𝐚𝐲 ',
+          body: '𝐀𝐧𝐠𝐞𝐥 𝐁𝐨𝐭 𝐃𝐞𝐥𝐚𝐲 ',
+          mediaType: 1,
+          thumbnailUrl: 'https://qu.ax/JRCMQ.jpg',
+          renderLargerThumbnail: false,
+          sourceUrl: ''
+        }
+      }
+    }, { quoted: m }); = {
  contextInfo: {
              isForwarded: true,
     forwardedNewsletterMessageInfo: {

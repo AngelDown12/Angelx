@@ -93,7 +93,17 @@ var handler = async function (m, conn, db) {
     }
 
     // Selección de canal aleatorio
-    let rcanal = { 
+    let contextInfo: {
+        externalAdReply: {
+          title: '𝐀𝐧𝐠𝐞𝐥 𝐁𝐨𝐭 𝐃𝐞𝐥𝐚𝐲 ',
+          body: '𝐀𝐧𝐠𝐞𝐥 𝐁𝐨𝐭 𝐃𝐞𝐥𝐚𝐲 ',
+          mediaType: 1,
+          thumbnailUrl: 'https://qu.ax/JRCMQ.jpg',
+          renderLargerThumbnail: false,
+          sourceUrl: ''
+        }
+      }
+    }, { quoted: m }); = { 
         contextInfo: { 
             isForwarded: true, 
             forwardedNewsletterMessageInfo: { 
@@ -114,7 +124,17 @@ var handler = async function (m, conn, db) {
         } 
     }
 
-    return { fotoperfil, userNationality, pushname, taguser, rimg, wait, fkontak, rcanal }
+    return { fotoperfil, userNationality, pushname, taguser, rimg, wait, fkontak, contextInfo: {
+        externalAdReply: {
+          title: '𝐀𝐧𝐠𝐞𝐥 𝐁𝐨𝐭 𝐃𝐞𝐥𝐚𝐲 ',
+          body: '𝐀𝐧𝐠𝐞𝐥 𝐁𝐨𝐭 𝐃𝐞𝐥𝐚𝐲 ',
+          mediaType: 1,
+          thumbnailUrl: 'https://qu.ax/JRCMQ.jpg',
+          renderLargerThumbnail: false,
+          sourceUrl: ''
+        }
+      }
+    }, { quoted: m }); }
 }
 
 export default handler
